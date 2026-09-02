@@ -22,10 +22,10 @@ jobs:
           9.0.x
 
     - name: Restaurar Dependências (NuGet)
-      run: dotnet restore ResenhaApp.sln
+      run: dotnet restore Resenha.sln
 
     - name: Compilar Solução (Build)
-      run: dotnet build ResenhaApp.sln --no-restore --configuration Release
+      run: dotnet build Resenha.sln --no-restore --configuration Release
 
     - name: Executar Testes Unitários
-      run: dotnet test ResenhaApp.sln --no-build --configuration Release --verbosity normal
+      run: dotnet test Resenha.sln --no-build --configuration Release --verbosity normal
