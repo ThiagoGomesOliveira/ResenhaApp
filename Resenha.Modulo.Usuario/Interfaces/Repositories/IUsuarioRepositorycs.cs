@@ -1,4 +1,4 @@
-﻿namespace Resenha.Modulo.Usuario.Repositories;
+﻿namespace Resenha.Modulo.Usuario.Interfaces.Repositories;
 
 public interface IUsuarioRepositorycs
 {
