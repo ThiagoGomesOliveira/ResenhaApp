@@ -91,7 +91,7 @@ Responsável pela identificação, cadastro e autenticação de pessoas (organiz
 | `id` | `UUID` / `Long` | Sim | Identificador único do usuário. |
 | `nome` | `String` | Sim | Nome completo do usuário. |
 | `email` | `String` | Sim | E-mail único do usuário (**Constraint UNIQUE**). |
-| `senhaHash` | `String` | Sim | Hash da senha criptografada. |
+| `IdentityId` | `String` | Sim | // FK que aponta para o AspNetUsers. |
 | `telefone` | `String` | Não | Telefone/WhatsApp para contato. |
 | `dataCadastro` | `DateTime` | Sim | Timestamp da criação da conta. |
 | `ativo` | `Boolean` | Sim | Status da conta (ativo/inativo). |
