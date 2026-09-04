@@ -1,6 +1,6 @@
 ﻿namespace Resenha.Modulo.Usuario.Interfaces.Repositories;
 
-public interface IUsuarioRepositorycs
+public interface IUsuarioRepository
 {
     Task<Entities.Usuario> ObterPorIdAsync(long id);
     Task AtualizarAsync(Entities.Usuario usuario);

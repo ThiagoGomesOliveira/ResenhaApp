@@ -7,8 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Resenha.Infrastructure\Resenha.Infrastructure.csproj" />
+    <ProjectReference Include="..\Resenha.Modulo.Usuario.Application\Resenha.Modulo.Usuario.Application.csproj" />
     <ProjectReference Include="..\ResenhaWeb.Client\ResenhaWeb.Client.csproj" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.0" />
   </ItemGroup>
 
 </Project>
