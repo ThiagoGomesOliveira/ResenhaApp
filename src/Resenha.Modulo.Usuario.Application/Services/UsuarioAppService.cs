@@ -5,7 +5,7 @@ using Resenha.Modulo.Usuario.Interfaces.Services;
 
 namespace Resenha.Modulo.Usuario.Application.Services;
 
-public class UsuarioAppService(IUsuarioRepositorycs _usuarioRepository, IAuthService _authService) : IUsuarioAppService
+public class UsuarioAppService(IUsuarioRepository _usuarioRepository, IAuthService _authService) : IUsuarioAppService
 {
     public async Task<(bool Sucesso, IEnumerable<string> Erros)> RegistrarAsync(RegistrarUsuarioDto dto)
     {
