@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Resenha.CrossCutting.Dependecias;
 using Resenha.Infrastructure.Persistence;
 using Resenha.Infrastructure.Repositories.Usuario;
 using Resenha.Infrastructure.Services;
@@ -30,10 +31,7 @@ else
     app.UseHsts();
 }
 
-//CONFIGURAÇÃO DO BANCO DE DADOS
-var connectionString = builder.Configuration.GetConnectionString("PostgresConnection");
-builder.Services.AddDbContext<ResenhaDbContext>(options =>
-    options.UseNpgsql(connectionString));
+DependencyInjection.AddInfrastructure(builder.Services, builder.Configuration);
 
 //configuração do identity
 builder.Services.AddIdentityApiEndpoints<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -58,14 +56,6 @@ builder.Services.Configure<IdentityOptions>(options =>
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
     options.User.RequireUniqueEmail = true;
 });
-
-//Injeção de dependência para o repositório
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-
-//Injecação de dependência para o serviço
-builder.Services.AddScoped<IUsuarioAppService, UsuarioAppService>();
-builder.Services.AddScoped<IAuthService, IdentityAuthService>();
-
 
 app.UseHttpsRedirection();
 

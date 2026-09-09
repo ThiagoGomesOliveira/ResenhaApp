@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.Modulo.Usuario", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.Modulo.Usuario.Application", "src\Resenha.Modulo.Usuario.Application\Resenha.Modulo.Usuario.Application.csproj", "{A6BD0115-4AAE-E4B9-458E-DC8852724AEC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Compartilhado", "Compartilhado", "{90E1DF0A-D417-4D5C-B06F-5DF99B9B0F82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.CrossCutting", "src\Resenha.CrossCutting\Resenha.CrossCutting.csproj", "{0709F898-4FCF-43DE-86D2-6FB6B542DC5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{A6BD0115-4AAE-E4B9-458E-DC8852724AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6BD0115-4AAE-E4B9-458E-DC8852724AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6BD0115-4AAE-E4B9-458E-DC8852724AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0709F898-4FCF-43DE-86D2-6FB6B542DC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0709F898-4FCF-43DE-86D2-6FB6B542DC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0709F898-4FCF-43DE-86D2-6FB6B542DC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0709F898-4FCF-43DE-86D2-6FB6B542DC5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,7 @@ Global
 		{11EADBE0-AEE5-484A-A30E-D147A6230AE5} = {16FEADC1-DBC6-4439-A4FE-3BD637004D37}
 		{747D9A1D-F41D-0976-637D-7EC8A92ACD3D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{A6BD0115-4AAE-E4B9-458E-DC8852724AEC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0709F898-4FCF-43DE-86D2-6FB6B542DC5F} = {90E1DF0A-D417-4D5C-B06F-5DF99B9B0F82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF6F2987-64A8-41EC-8250-12765001E541}
