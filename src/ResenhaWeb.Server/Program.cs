@@ -4,6 +4,7 @@ using Resenha.CrossCutting.Dependecias;
 using Resenha.Infrastructure.Persistence;
 using Resenha.Infrastructure.Repositories.Usuario;
 using Resenha.Infrastructure.Services;
+using Resenha.Modulo.Usuario.Application.Dependencias;
 using Resenha.Modulo.Usuario.Application.Interfaces;
 using Resenha.Modulo.Usuario.Application.Services;
 using Resenha.Modulo.Usuario.Interfaces.Repositories;
@@ -31,7 +32,8 @@ else
     app.UseHsts();
 }
 
-DependencyInjection.AddInfrastructure(builder.Services, builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddUsuarioApplication();
 
 //configuração do identity
 builder.Services.AddIdentityApiEndpoints<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
