@@ -39,7 +39,7 @@
 ## Regras de Negócio
 -RN01 - Será obrigatório a criação de um usuário para poder utilizar o sistema. 
 -RN02 - Caso usuário não exista, não permitir logar no sistema.
--RN03 - Não deve permitir criar usuários com o mesmo email e cpf já existente na plataforma. 
+-RN03 - Não deve permitir criar usuários com o mesmo email já existente na plataforma. 
 -RN04 - Caso usuário esqueça a senha, permitir alterar ela.
 -RN05 - Usuário logado podera criar eventos.
 -RN06 - Usuário se quiser poderá parametrizar os valores refente ao consumo, quantidade etc ...

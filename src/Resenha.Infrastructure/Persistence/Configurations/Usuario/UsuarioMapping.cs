@@ -30,7 +30,6 @@ public class UsuarioMapping : IEntityTypeConfiguration<Resenha.Modulo.Usuario.En
             .HasColumnName("identity_id");
 
         builder.Property(u => u.Telefone)
-            .IsRequired()
             .HasMaxLength(15)
             .HasColumnType("varchar(15)")
             .HasColumnName("telefone");

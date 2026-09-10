@@ -1,42 +1,39 @@
-﻿using Resenha.Modulo.Usuario.Validators;
-
+﻿
 namespace Resenha.Modulo.Usuario.Entities;
 public class Usuario
 {
-    public long Id { get; set; }
-    public required string Nome { get; set; }
-    public required string Email { get; set; }
-    public required string IdentityId { get; set; }
-    public required string Telefone { get; set; }
-    public DateTime DataCadastro { get; set; }
-    public bool Ativo { get; set; }
+    public long Id { get; private set; }
+    public string Nome { get; private set; }
+    public  string Email { get; private set; }
+    public string IdentityId { get; private set; }
+    public string  Telefone { get; private set; }
+    public DateTime DataCadastro { get; private set; }
+    public bool Ativo { get; private set; }
 
     private Usuario() { }
 
-    public static Usuario Criar(string nome, string email, string identyId, string telefone)
+    public static Usuario Criar(string nome, string email, string identityId, string telefone)
     {
+        if (string.IsNullOrEmpty(email))
+            throw new ArgumentNullException(nameof(email), "Email obrigatório");
+
+        if (string.IsNullOrEmpty(identityId))
+            throw new ArgumentNullException(nameof(identityId), "IdentityId é obrigatório.");
+
+        if (string.IsNullOrEmpty(nome))
+            throw new ArgumentNullException(nameof(nome), "Nome é obrigatório.");
+
         var usuario = new Usuario
         {
             Nome = nome,
             Email = email,
-            IdentityId = identyId,
+            IdentityId = identityId,
             Telefone = telefone,
-            DataCadastro = DateTime.Now,
+            DataCadastro = DateTime.UtcNow,
             Ativo = true
         };
 
-        usuario.Validar();
-
         return usuario;
-    }
-
-    private void Validar()
-    {
-        var validador = new UsuarioValidator();
-        var result = validador.Validate(this);
-
-        if (!result.IsValid)
-           throw new Exception(string.Join(", ", result.Errors.Select(e => e.ErrorMessage)));
     }
 
     public void Ativar() => Ativo = true;
@@ -46,6 +43,5 @@ public class Usuario
     {
         Nome = nome;
         Telefone = telefone;
-        Validar();
     }
 }
