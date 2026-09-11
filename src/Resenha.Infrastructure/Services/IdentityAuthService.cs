@@ -16,7 +16,7 @@ public class IdentityAuthService(UserManager<IdentityUser> _userManager,
     {
         var userIdentity = new IdentityUser { UserName = email, Email = email, EmailConfirmed = true };
 
-        var result = await _userManager.CreateAsync(userIdentity);
+        var result = await _userManager.CreateAsync(userIdentity, senha);
 
         if (!result.Succeeded)
         {
