@@ -1,14 +1,7 @@
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Resenha.CrossCutting.Dependecias;
 using Resenha.Infrastructure.Persistence;
-using Resenha.Infrastructure.Repositories.Usuario;
-using Resenha.Infrastructure.Services;
 using Resenha.Modulo.Usuario.Application.Dependencias;
-using Resenha.Modulo.Usuario.Application.Interfaces;
-using Resenha.Modulo.Usuario.Application.Services;
-using Resenha.Modulo.Usuario.Interfaces.Repositories;
-using Resenha.Modulo.Usuario.Interfaces.Services;
 using ResenhaWeb.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,21 +11,10 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseWebAssemblyDebugging();
-}
-else
-{
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
+//Infrascturture
 builder.Services.AddInfrastructure(builder.Configuration);
+
+//Aplication
 builder.Services.AddUsuarioApplication();
 
 //configuração do identity
@@ -58,6 +40,20 @@ builder.Services.Configure<IdentityOptions>(options =>
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
     options.User.RequireUniqueEmail = true;
 });
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseWebAssemblyDebugging();
+}
+else
+{
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
 
 app.UseHttpsRedirection();
 
