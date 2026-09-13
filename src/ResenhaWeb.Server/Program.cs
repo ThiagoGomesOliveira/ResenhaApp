@@ -44,6 +44,8 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddCascadingAuthenticationState();
 
+builder.Services.AddHttpClient();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
