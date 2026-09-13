@@ -1,0 +1,63 @@
+﻿@using System.Net.Http.Json
+@inject HttpClient Http
+@page "/usuario/cadastro"
+
+<h1>Cadastro</h1>
+
+<EditForm Model="registrarUsuarioModel" OnValidSubmit="Cadastrar">
+
+	<div>
+		<label>Nome</label>
+		<InputText @bind-Value="registrarUsuarioModel.Nome" />
+	</div>
+
+	<div>
+		<label>Email</label>
+		<InputText @bind-Value="registrarUsuarioModel.Email" />
+	</div>
+
+	<div>
+		<label>Senha</label>
+		<InputText @bind-Value="registrarUsuarioModel.Senha" type="password" />
+	</div>
+	<div>
+		<label>Telefone</label>
+		<InputText @bind-Value="registrarUsuarioModel.Telefone" />
+	</div>
+
+	<button type="submit">Cadastrar</button>
+
+</EditForm>
+
+@if (!string.IsNullOrEmpty(mensagem))
+{
+	<p>@mensagem</p>
+}
+
+@code {
+
+	private RegistrarUsuarioModel registrarUsuarioModel = new();
+
+	private string mensagem = string.Empty;
+
+	private async Task Cadastrar()
+	{
+		var response = await Http.PostAsJsonAsync("api/usuarios/", registrarUsuarioModel);
+
+		if (response.IsSuccessStatusCode)
+		{
+			mensagem = "Cadastro realizado com sucesso";
+			return;
+		}
+
+		mensagem = $"Erro ao realizar cadastro {response.RequestMessage}";
+	}
+
+	private class RegistrarUsuarioModel
+	{
+		public string Nome { get; set; } = string.Empty;
+		public string Email { get; set; } = string.Empty;
+		public string Senha { get; set; } = string.Empty;
+		public string? Telefone { get; set; }
+	}
+}

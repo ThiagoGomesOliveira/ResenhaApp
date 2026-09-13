@@ -28,6 +28,7 @@ public class UsuarioAppService(IUsuarioRepository _usuarioRepository,
         var usuario =  Entities.Usuario.Criar(dto.Nome, dto.Email, identityId, dto.Telefone);
 
         await _usuarioRepository.AdicionarAsync(usuario);
+        var sucesso = _usuarioRepository.SalvarAlteracoesAsync();
 
         return (true, Enumerable.Empty<string>());
     }
