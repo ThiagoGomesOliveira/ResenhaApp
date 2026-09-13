@@ -3,6 +3,7 @@ using Resenha.CrossCutting.Dependecias;
 using Resenha.Infrastructure.Persistence;
 using Resenha.Modulo.Usuario.Application.Dependencias;
 using ResenhaWeb.Components;
+using ResenhaWeb.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -67,5 +68,7 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(ResenhaWeb.Client._Imports).Assembly);
+
+app.MapUsuarioEndpoints();
 
 app.Run();
