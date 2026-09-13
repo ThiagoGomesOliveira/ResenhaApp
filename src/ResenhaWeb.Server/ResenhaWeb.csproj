@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <ProjectReference Include="..\Resenha.CrossCutting\Resenha.CrossCutting.csproj" />
     <ProjectReference Include="..\Resenha.Infrastructure\Resenha.Infrastructure.csproj" />
     <ProjectReference Include="..\Resenha.Modulo.Usuario.Application\Resenha.Modulo.Usuario.Application.csproj" />
