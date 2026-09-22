@@ -2,32 +2,72 @@
 @inject HttpClient Http
 @page "/usuario/cadastro"
 
-<h1>Cadastro</h1>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-8 col-lg-6">
 
-<EditForm Model="registrarUsuarioModel" OnValidSubmit="Cadastrar">
+			<div class="card shadow-sm">
+				<div class="card-body">
 
-	<div>
-		<label>Nome</label>
-		<InputText @bind-Value="registrarUsuarioModel.Nome" />
+					<h1 class="card-title mb-4">Cadastro</h1>
+
+					<EditForm Model="registrarUsuarioModel"
+							  OnValidSubmit="Cadastrar">
+
+						<div class="mb-3">
+							<label for="nome" class="form-label">
+								Nome
+							</label>
+
+							<InputText id="nome"
+									   class="form-control"
+									   @bind-Value="registrarUsuarioModel.Nome" />
+						</div>
+
+						<div class="mb-3">
+							<label for="email" class="form-label">
+								Email
+							</label>
+
+							<InputText id="email"
+									   type="email"
+									   class="form-control"
+									   @bind-Value="registrarUsuarioModel.Email" />
+						</div>
+
+						<div class="mb-3">
+							<label for="senha" class="form-label">
+								Senha
+							</label>
+
+							<InputText id="senha"
+									   type="password"
+									   class="form-control"
+									   @bind-Value="registrarUsuarioModel.Senha" />
+						</div>
+
+						<div class="mb-3">
+							<label for="telefone" class="form-label">
+								Telefone
+							</label>
+
+							<InputText id="telefone"
+									   class="form-control"
+									   @bind-Value="registrarUsuarioModel.Telefone" />
+						</div>
+
+						<button type="submit" class="btn btn-primary">
+							Cadastrar
+						</button>
+
+					</EditForm>
+
+				</div>
+			</div>
+
+		</div>
 	</div>
-
-	<div>
-		<label>Email</label>
-		<InputText @bind-Value="registrarUsuarioModel.Email" />
-	</div>
-
-	<div>
-		<label>Senha</label>
-		<InputText @bind-Value="registrarUsuarioModel.Senha" type="password" />
-	</div>
-	<div>
-		<label>Telefone</label>
-		<InputText @bind-Value="registrarUsuarioModel.Telefone" />
-	</div>
-
-	<button type="submit">Cadastrar</button>
-
-</EditForm>
+</div>
 
 @if (!string.IsNullOrEmpty(mensagem))
 {
