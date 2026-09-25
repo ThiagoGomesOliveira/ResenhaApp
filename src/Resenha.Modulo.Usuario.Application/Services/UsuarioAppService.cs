@@ -10,6 +10,16 @@ public class UsuarioAppService(IUsuarioRepository _usuarioRepository,
     IAuthService _authService,
     RegistrarUsuarioValidator _validator) : IUsuarioAppService
 {
+    public async Task<(bool Sucesso, IEnumerable<string> Erros)> LoginAsync(LoginDto dto)
+    {
+        var sucesso = await _authService.AutenticarAsync(dto.Email,dto.Senha);
+
+        if(!sucesso)
+            return (false, new[] { "Email ou senha inválidos." });
+
+        return (true, Enumerable.Empty<string>());
+    }
+
     public async Task<(bool Sucesso, IEnumerable<string> Erros)> RegistrarAsync(RegistrarUsuarioDto dto)
     {
         var resultado = await _validator.ValidateAsync(dto);

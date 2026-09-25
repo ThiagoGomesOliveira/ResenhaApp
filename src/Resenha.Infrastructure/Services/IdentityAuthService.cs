@@ -8,7 +8,12 @@ public class IdentityAuthService(UserManager<IdentityUser> _userManager,
 {
     public async Task<bool> AutenticarAsync(string email, string senha)
     {
-        var result = await _signInManager.PasswordSignInAsync(email, senha, isPersistent: false, lockoutOnFailure: false);
+        var result = await _signInManager.PasswordSignInAsync(
+            email,
+            senha,
+            isPersistent: false,
+            lockoutOnFailure: true);
+
         return result.Succeeded;
     }
 
