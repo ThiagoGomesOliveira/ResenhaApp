@@ -19,6 +19,19 @@ public static class UsuarioEndpoints
          .WithName("RegistrarUsuario")
          .WithTags("Usuarios");
 
+
+        endpoints.MapPost("/api/usuarios/login", async (LoginDto dto, IUsuarioAppService usuarioAppService) =>
+        {
+            var (sucesso, erros) = await usuarioAppService.LoginAsync(dto);
+
+            if (!sucesso)
+                return Results.Unauthorized();
+
+            return Results.Ok();
+        })
+         .WithName("LoginUsuario")
+         .WithTags("Usuarios");
+
         return endpoints;
     }
 }
