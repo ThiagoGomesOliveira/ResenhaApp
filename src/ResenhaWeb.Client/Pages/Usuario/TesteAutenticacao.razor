@@ -1,0 +1,24 @@
+﻿@page "/usuario/teste-autenticacao"
+
+@using Microsoft.AspNetCore.Components.Authorization
+
+<h3>Teste de autenticação</h3>
+
+<AuthorizeView>
+    <Authorized>
+        <div class="alert alert-success">
+            Usuário autenticado!
+        </div>
+
+        <p>
+            Usuário:
+            <strong>@context.User.Identity?.Name</strong>
+        </p>
+    </Authorized>
+
+    <NotAuthorized>
+        <div class="alert alert-danger">
+            Usuário não autenticado.
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
