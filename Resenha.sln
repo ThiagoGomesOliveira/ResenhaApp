@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.Modulo.Usuario", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.Modulo.Usuario.Application", "src\Resenha.Modulo.Usuario.Application\Resenha.Modulo.Usuario.Application.csproj", "{A6BD0115-4AAE-E4B9-458E-DC8852724AEC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Compartilhado", "Compartilhado", "{90E1DF0A-D417-4D5C-B06F-5DF99B9B0F82}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{90E1DF0A-D417-4D5C-B06F-5DF99B9B0F82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.CrossCutting", "src\Resenha.CrossCutting\Resenha.CrossCutting.csproj", "{0709F898-4FCF-43DE-86D2-6FB6B542DC5F}"
 EndProject
