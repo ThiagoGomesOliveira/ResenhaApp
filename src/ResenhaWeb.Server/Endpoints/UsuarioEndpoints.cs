@@ -32,6 +32,16 @@ public static class UsuarioEndpoints
          .WithName("LoginUsuario")
          .WithTags("Usuarios");
 
+
+        endpoints.MapPost("/api/usuarios/logout",
+            async (IUsuarioAppService usuarioAppService) =>
+        {
+            await usuarioAppService.LogoutAsync();
+            return Results.Ok();
+        })
+         .WithName("LogoutUsuario")
+         .WithTags("Usuarios");
+
         return endpoints;
     }
 }
