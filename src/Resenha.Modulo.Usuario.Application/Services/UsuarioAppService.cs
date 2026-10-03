@@ -20,6 +20,11 @@ public class UsuarioAppService(IUsuarioRepository _usuarioRepository,
         return (true, Enumerable.Empty<string>());
     }
 
+    public async Task LogoutAsync()
+    {
+        await _authService.DeslogarAsync();
+    }
+
     public async Task<(bool Sucesso, IEnumerable<string> Erros)> RegistrarAsync(RegistrarUsuarioDto dto)
     {
         var resultado = await _validator.ValidateAsync(dto);

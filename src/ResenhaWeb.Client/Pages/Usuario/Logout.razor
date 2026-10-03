@@ -1,0 +1,23 @@
+﻿@inject HttpClient Http
+@inject NavigationManager Navigation
+@page "/usuario/logout"
+
+<button class="btn btn-outline-danger" @onclick="LogoutAsync">
+    Sair
+</button>
+
+
+@code {
+
+    private async Task LogoutAsync()
+    {
+        var response = await Http.PostAsync(
+            "api/usuarios/logout",
+            null);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo("/usuario/login", true);
+        }
+    }
+}
