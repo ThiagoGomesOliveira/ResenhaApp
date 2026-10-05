@@ -27,8 +27,6 @@ public class Parametro
         DuracaoPadraoHoras = duracaoPadraoHoras;
     }
 
-    public void Ativar() => Ativo = true;   
+    public void Ativar() => Ativo = true;
     public void Desativar() => Ativo = false;
 }
-
-
