@@ -1,4 +1,4 @@
-﻿namespace Parametro.Entities;
+﻿namespace Resenha.Modulo.Parametro.Entities;
 
 public class Parametro
 {

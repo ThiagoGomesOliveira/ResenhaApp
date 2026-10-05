@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.Modulo.Evento", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parametros", "Parametros", "{3C5DED19-7811-4583-94B1-33192F804EEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parametro", "src\Parametro\Parametro.csproj", "{D79CAA40-EC20-442B-B4A3-316F67266B29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.Modulo.Parametro", "src\Parametro\Resenha.Modulo.Parametro.csproj", "{D79CAA40-EC20-442B-B4A3-316F67266B29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
