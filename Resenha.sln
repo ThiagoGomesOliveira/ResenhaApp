@@ -25,10 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Evento", "Evento", "{BBCBDB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.Modulo.Evento", "src\Resenha.Modulo.Evento\Resenha.Modulo.Evento.csproj", "{AFAF51E3-BE50-4F53-AC63-97708E69FA1C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parametro", "Parametro", "{3D7D5CC4-C2FB-4F65-B529-D593CFBA17D4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resenha.Modulo.Parametro", "Resenha.Modulo.Parametro\Resenha.Modulo.Parametro.csproj", "{AB4C9457-C50F-4D2B-9657-29D49840D0C7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
