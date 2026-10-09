@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Resenha.Modulo.Usuario\Resenha.Modulo.Usuario.csproj" />
+	<ProjectReference Include="..\Resenha.Modulo.Categoria\Resenha.Modulo.Categoria.csproj" />
   </ItemGroup>
 
 </Project>
