@@ -2,8 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Resenha.Infrastructure.Persistence;
+using Resenha.Infrastructure.Repositories.Categoria;
 using Resenha.Infrastructure.Repositories.Usuario;
 using Resenha.Infrastructure.Services;
+using Resenha.Modulo.Categoria.Interfaces;
 using Resenha.Modulo.Usuario.Interfaces.Repositories;
 using Resenha.Modulo.Usuario.Interfaces.Services;
 
@@ -20,6 +22,7 @@ public static class DependencyInjection
 
         //Injeção de dependência para o repositório
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+        services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
         //Injecação de dependência para o serviço
         services.AddScoped<IAuthService, IdentityAuthService>();
